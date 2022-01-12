@@ -2,6 +2,6 @@
 
 class_WdgIf WdgIf;
 
-void class_WdgIf::InitFunction(void){
+FUNC(void, WDGIF_CODE) class_WdgIf::InitFunction(void){
 }
 
