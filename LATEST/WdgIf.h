@@ -5,7 +5,9 @@
 
 class class_WdgIf{
    public:
-      FUNC(void, WDGIF_CODE) InitFunction(void);
+      FUNC(void, WDGIF_CODE) SetMode             (void);
+      FUNC(void, WDGIF_CODE) SetTriggerCondition (void);
+      FUNC(void, WDGIF_CODE) GetVersionInfo      (void);
 };
 
 extern class_WdgIf WdgIf;
