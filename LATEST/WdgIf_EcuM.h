@@ -1,14 +1,15 @@
+#pragma once
 /*****************************************************/
-/* File   : WdgIf.cpp                                */
+/* File   : WdgIf_EcuM.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "WdgIf.h"
+#include "Compiler_Cfg_WdgIf.h"
 
-#include "WdgIf_EcuM.h"
+#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class class_WdgIf_EcuM : public class_EcuM_Client{
+   public:
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, WDGIF_CODE) InitFunction(void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,24 +41,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_WdgIf WdgIf;
-class_WdgIf_EcuM WdgIf_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_WdgIf = &WdgIf_EcuM;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
-FUNC(void, WDGIF_CODE) class_WdgIf_EcuM::InitFunction(void){
-}
-
-FUNC(void, WDGIF_CODE) class_WdgIf::SetMode(void){
-}
-
-FUNC(void, WDGIF_CODE) class_WdgIf::SetTriggerCondition(void){
-}
-
-FUNC(void, WDGIF_CODE) class_WdgIf::GetVersionInfo(void){
-}
+extern class_EcuM_Client *EcuM_Client_ptr_WdgIf;
 
 /*****************************************************/
 /* EOF                                               */
