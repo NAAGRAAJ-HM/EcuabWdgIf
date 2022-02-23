@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : WdgIf_EcuM.h                             */
+/* File   : WdgIf_SchM.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -9,7 +9,7 @@
 /*****************************************************/
 #include "Compiler_Cfg_WdgIf.h"
 
-#include "EcuM_Client.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_WdgIf_EcuM : public interface_EcuM_Client{
+class interface_WdgIf_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, WDGIF_CODE) InitFunction   (void);
-      FUNC(void, WDGIF_CODE) DeInitFunction (void);
+      FUNC(void, WDGIF_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -42,7 +41,7 @@ class interface_WdgIf_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_WdgIf_EcuM *EcuM_Client_ptr_WdgIf;
+extern interface_WdgIf_SchM *SchM_Client_ptr_WdgIf;
 
 /*****************************************************/
 /* EOF                                               */

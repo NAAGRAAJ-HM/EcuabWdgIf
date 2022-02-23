@@ -6,9 +6,10 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "WdgIf.h"
-
+#include "module.h"
 #include "WdgIf_EcuM.h"
+#include "WdgIf_SchM.h"
+#include "WdgIf_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,16 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_WdgIf:
+      public abstract_module
+   ,  public interface_WdgIf_EcuM
+   ,  public interface_WdgIf_SchM
+{
+   public:
+      FUNC(void, WDGIF_CODE) InitFunction   (void);
+      FUNC(void, WDGIF_CODE) DeInitFunction (void);
+      FUNC(void, WDGIF_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,23 +44,30 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_WdgIf WdgIf;
-class_WdgIf_EcuM WdgIf_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_WdgIf = &WdgIf_EcuM;
+module_WdgIf WdgIf;
+
+interface_WdgIf_EcuM *EcuM_Client_ptr_WdgIf = &WdgIf;
+interface_WdgIf_SchM *SchM_Client_ptr_WdgIf = &WdgIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, WDGIF_CODE) class_WdgIf_EcuM::InitFunction(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(void){
 }
 
-FUNC(void, WDGIF_CODE) class_WdgIf::SetMode(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
 }
 
-FUNC(void, WDGIF_CODE) class_WdgIf::SetTriggerCondition(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
 }
 
-FUNC(void, WDGIF_CODE) class_WdgIf::GetVersionInfo(void){
+FUNC(void, WDGIF_CODE) class_WdgIf_Unused::SetMode(void){
+}
+
+FUNC(void, WDGIF_CODE) class_WdgIf_Unused::SetTriggerCondition(void){
+}
+
+FUNC(void, WDGIF_CODE) class_WdgIf_Unused::GetVersionInfo(void){
 }
 
 /*****************************************************/
