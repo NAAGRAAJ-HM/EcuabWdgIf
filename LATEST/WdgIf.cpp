@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_WdgIf:
       public abstract_module
-   ,  public interface_WdgIf_EcuM
-   ,  public interface_WdgIf_SchM
 {
    public:
       FUNC(void, WDGIF_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_WdgIf:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_WdgIf WdgIf;
-
-interface_WdgIf_EcuM *EcuM_Client_ptr_WdgIf = &WdgIf;
-interface_WdgIf_SchM *SchM_Client_ptr_WdgIf = &WdgIf;
+module_WdgIf   WdgIf;
+infEcuMClient* gptrinfEcuMClient_WdgIf = &WdgIf;
+infSchMClient* gptrinfSchMClient_WdgIf = &WdgIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
