@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : WdgIf_SchM.h                             */
+/* File   : infWdgIf_EcuM.h                          */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient* gptrinfSchMClient_WdgIf;
+extern infEcuMClient* gptrinfEcuMClient_WdgIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
