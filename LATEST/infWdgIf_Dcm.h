@@ -32,7 +32,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern infDcmClient* gptrinfDcmClient_WdgIf;
+extern CONSTP2VAR(infDcmClient, WDGIF_VAR, WDGIF_CONST) gptrinfDcmClient_WdgIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
