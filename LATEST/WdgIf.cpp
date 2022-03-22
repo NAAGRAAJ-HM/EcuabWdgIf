@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infWdgIf_Version.h"
+#include "WdgIf_Cfg.h"
 #include "infWdgIf_EcuM.h"
 #include "infWdgIf_Dcm.h"
 #include "infWdgIf_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define WDGIF_AR_RELEASE_MAJOR_VERSION                                         4
+#define WDGIF_AR_RELEASE_MINOR_VERSION                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(WDGIF_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible WDGIF_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(WDGIF_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible WDGIF_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
 }
 
 FUNC(void, WDGIF_CODE) module_WdgIf::GetVersionInfo(void){
+#if(STD_ON == WdgIf_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
