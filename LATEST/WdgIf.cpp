@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "WdgIf_Cfg.h"
+#include "CfgWdgIf.h"
 #include "infWdgIf_EcuM.h"
 #include "infWdgIf_Dcm.h"
 #include "infWdgIf_SchM.h"
