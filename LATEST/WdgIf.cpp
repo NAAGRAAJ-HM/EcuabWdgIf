@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgWdgIf.h"
-#include "infWdgIf_EcuM.h"
-#include "infWdgIf_Dcm.h"
-#include "infWdgIf_SchM.h"
+#include "module.hpp"
+#include "CfgWdgIf.hpp"
+#include "infWdgIf_EcuM.hpp"
+#include "infWdgIf_Dcm.hpp"
+#include "infWdgIf_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, WDGIF_CODE) module_WdgIf::GetVersionInfo(void){
 FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
 }
 
-#include "WdgIf_Unused.h"
+#include "WdgIf_Unused.hpp"
 
 FUNC(void, WDGIF_CODE) class_WdgIf_Unused::SetMode(void){
 }
