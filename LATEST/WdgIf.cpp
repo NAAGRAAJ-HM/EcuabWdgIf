@@ -90,7 +90,11 @@ FUNC(void, WDGIF_CODE) module_WdgIf::GetVersionInfo(void){
 FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
 }
 
-#include "WdgIf_Unused.hpp"
+class class_WdgIf_Unused{
+   public:
+      FUNC(void, WDGIF_CODE) SetMode             (void);
+      FUNC(void, WDGIF_CODE) SetTriggerCondition (void);
+};
 
 FUNC(void, WDGIF_CODE) class_WdgIf_Unused::SetMode(void){
 }
