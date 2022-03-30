@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infWdgIf_EcuM.hpp"
 #include "infWdgIf_Dcm.hpp"
 #include "infWdgIf_SchM.hpp"
@@ -37,6 +37,9 @@ class module_WdgIf:
    public:
       module_WdgIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, WDGIF_CODE) InitFunction   (void);
       FUNC(void, WDGIF_CODE) DeInitFunction (void);
       FUNC(void, WDGIF_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_WdgIf, WDGIF_VAR) WdgIf(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
+   CONSTP2CONST(CfgWdgIf_Type, CFGWDGIF_CONFIG_DATA, CFGWDGIF_APPL_CONST) lptrCfgWdgIf
+){
+   if(NULL_PTR == lptrCfgWdgIf){
+#if(STD_ON == WdgIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgWdgIf for memory faults
+// use PBcfg_WdgIf as back-up configuration
+   }
    WdgIf.IsInitDone = E_OK;
 }
 
