@@ -37,10 +37,9 @@ class module_WdgIf:
    public:
       module_WdgIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, WDGIF_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, WDGIF_CODE) InitFunction   (void);
       FUNC(void, WDGIF_CODE) DeInitFunction (void);
       FUNC(void, WDGIF_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_WdgIf, WDGIF_VAR) WdgIf(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
-   CONSTP2CONST(CfgWdgIf_Type, CFGWDGIF_CONFIG_DATA, CFGWDGIF_APPL_CONST) lptrCfgWdgIf
+   CONSTP2CONST(CfgModule_TypeAbstract, WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgWdgIf){
+   if(E_OK == IsInitDone){
 #if(STD_ON == WdgIf_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgWdgIf for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == WdgIf_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_WdgIf as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   WdgIf.IsInitDone = E_OK;
 }
 
 FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
-   WdgIf.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == WdgIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
