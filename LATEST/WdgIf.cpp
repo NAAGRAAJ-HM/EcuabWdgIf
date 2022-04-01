@@ -78,6 +78,7 @@ VAR(module_WdgIf, WDGIF_VAR) WdgIf(
 FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == WdgIf_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == WdgIf_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == WdgIf_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
 // use PBcfg_WdgIf as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == WdgIf_InitCheck)
    }
+#endif
 }
 
 FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
+#if(STD_ON == WdgIf_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == WdgIf_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == WdgIf_InitCheck)
    }
+#endif
 }
 
 FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
+#if(STD_ON == WdgIf_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == WdgIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == WdgIf_InitCheck)
+   }
+#endif
 }
 
 class class_WdgIf_Unused{
