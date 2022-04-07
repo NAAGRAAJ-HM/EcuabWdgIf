@@ -101,8 +101,8 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgWdgIf;
          }
       }
       IsInitDone = E_OK;
