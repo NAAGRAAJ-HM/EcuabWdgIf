@@ -31,8 +31,15 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_WdgIf_Functionality{
+   public:
+      FUNC(void, WDGIF_CODE) SetMode             (void);
+      FUNC(void, WDGIF_CODE) SetTriggerCondition (void);
+};
+
 class module_WdgIf:
       public abstract_module
+   ,  public class_WdgIf_Functionality
 {
    public:
       module_WdgIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +91,10 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == WdgIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +103,10 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == WdgIf_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +131,10 @@ FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == WdgIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +151,10 @@ FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == WdgIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,16 +165,10 @@ FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
 #endif
 }
 
-class class_WdgIf_Unused{
-   public:
-      FUNC(void, WDGIF_CODE) SetMode             (void);
-      FUNC(void, WDGIF_CODE) SetTriggerCondition (void);
-};
-
-FUNC(void, WDGIF_CODE) class_WdgIf_Unused::SetMode(void){
+FUNC(void, WDGIF_CODE) class_WdgIf_Functionality::SetMode(void){
 }
 
-FUNC(void, WDGIF_CODE) class_WdgIf_Unused::SetTriggerCondition(void){
+FUNC(void, WDGIF_CODE) class_WdgIf_Functionality::SetTriggerCondition(void){
 }
 
 /******************************************************************************/
