@@ -31,12 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_WdgIf_Functionality{
-   public:
-      FUNC(void, WDGIF_CODE) SetMode             (void);
-      FUNC(void, WDGIF_CODE) SetTriggerCondition (void);
-};
-
 class module_WdgIf:
       public abstract_module
    ,  public class_WdgIf_Functionality
