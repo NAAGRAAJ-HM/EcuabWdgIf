@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "WdgIf_core.hpp"
 #include "infWdgIf_EcuM.hpp"
 #include "infWdgIf_Dcm.hpp"
 #include "infWdgIf_SchM.hpp"

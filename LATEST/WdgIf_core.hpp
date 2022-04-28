@@ -7,10 +7,18 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "CompilerCfg_WdgIf.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define WDGIF_COREFUNCTIONALITIES                                              \
+              FUNC(void, WDGIF_CODE) SetMode             (void);               \
+              FUNC(void, WDGIF_CODE) SetTriggerCondition (void);               \
+
+#define WDGIF_COREFUNCTIONALITIES_VIRTUAL                                      \
+      virtual FUNC(void, WDGIF_CODE) SetMode             (void) = 0;           \
+      virtual FUNC(void, WDGIF_CODE) SetTriggerCondition (void) = 0;           \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -21,8 +29,7 @@
 /******************************************************************************/
 class class_WdgIf_Functionality{
    public:
-      FUNC(void, WDGIF_CODE) SetMode             (void);
-      FUNC(void, WDGIF_CODE) SetTriggerCondition (void);
+      WDGIF_COREFUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
