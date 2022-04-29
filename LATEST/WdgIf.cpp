@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgWdgIf.hpp"
 #include "WdgIf_core.hpp"
-#include "infWdgIf_EcuM.hpp"
-#include "infWdgIf_Dcm.hpp"
-#include "infWdgIf_SchM.hpp"
+#include "infWdgIf.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_WdgIf:
       );
       FUNC(void, WDGIF_CODE) DeInitFunction (void);
       FUNC(void, WDGIF_CODE) MainFunction   (void);
+      WDGIF_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_WdgIf, WDGIF_VAR) WdgIf;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, WDGIF_VAR, WDGIF_CONST) gptrinfSchMClient_WdgIf = &Wdg
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgWdgIf.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */

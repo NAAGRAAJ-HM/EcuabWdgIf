@@ -1,24 +1,19 @@
 #pragma once
 /******************************************************************************/
-/* File   : WdgIf_core.hpp                                                    */
+/* File   : infWdgIf.hpp                                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_WdgIf.hpp"
+#include "infWdgIf_EcuM.hpp"
+#include "infWdgIf_Dcm.hpp"
+#include "infWdgIf_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define WDGIF_CORE_FUNCTIONALITIES                                             \
-              FUNC(void, WDGIF_CODE) SetMode             (void);               \
-              FUNC(void, WDGIF_CODE) SetTriggerCondition (void);               \
-
-#define WDGIF_CORE_FUNCTIONALITIES_VIRTUAL                                     \
-      virtual FUNC(void, WDGIF_CODE) SetMode             (void) = 0;           \
-      virtual FUNC(void, WDGIF_CODE) SetTriggerCondition (void) = 0;           \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -27,10 +22,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_WdgIf_Functionality{
-   public:
-      WDGIF_CORE_FUNCTIONALITIES_VIRTUAL
-};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
