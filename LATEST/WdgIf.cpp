@@ -159,10 +159,10 @@ FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
 #endif
 }
 
-FUNC(void, WDGIF_CODE) class_WdgIf_Functionality::SetMode(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::SetMode(void){
 }
 
-FUNC(void, WDGIF_CODE) class_WdgIf_Functionality::SetTriggerCondition(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::SetTriggerCondition(void){
 }
 
 /******************************************************************************/
