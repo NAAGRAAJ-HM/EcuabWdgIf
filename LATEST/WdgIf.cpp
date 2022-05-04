@@ -113,7 +113,7 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  WDGIF_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  WDGIF_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  WDGIF_E_UNINIT
       );
 #endif
    }
