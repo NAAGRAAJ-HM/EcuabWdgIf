@@ -89,7 +89,10 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == WdgIf_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
 
 FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
 #if(STD_ON == WdgIf_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == WdgIf_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
 
 FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
 #if(STD_ON == WdgIf_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == WdgIf_InitCheck)
    }
