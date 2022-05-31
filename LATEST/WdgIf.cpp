@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_WdgIf:
-   INTERFACES_EXPORTED_WDGIF
+      INTERFACES_EXPORTED_WDGIF
       public abstract_module
    ,  public class_WdgIf_Functionality
 {
