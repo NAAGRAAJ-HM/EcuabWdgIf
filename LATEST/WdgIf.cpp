@@ -10,6 +10,7 @@
 #include "CfgWdgIf.hpp"
 #include "WdgIf_core.hpp"
 #include "infWdgIf_Exp.hpp"
+#include "infWdgIf_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
