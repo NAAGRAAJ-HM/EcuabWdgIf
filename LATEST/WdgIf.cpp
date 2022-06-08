@@ -74,7 +74,7 @@ CONSTP2VAR(infSchMClient, WDGIF_VAR, WDGIF_CONST) gptrinfSchMClient_WdgIf = &Wdg
 VAR(module_WdgIf, WDGIF_VAR) WdgIf(
    {
 #if(STD_ON == _ReSIM)
-// char strModuleName[6];
+   char strModuleName[6] = "WDGIF";
 #else
 #endif
          WDGIF_AR_RELEASE_VERSION_MAJOR
