@@ -130,7 +130,9 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
 #endif
 }
 
-FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(
+   void
+){
 #if(STD_ON == WdgIf_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, WDGIF_CODE) module_WdgIf::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(
+   void
+){
 #if(STD_ON == WdgIf_InitCheck)
    if(
          E_OK
@@ -175,10 +179,14 @@ FUNC(void, WDGIF_CODE) module_WdgIf::MainFunction(void){
 #endif
 }
 
-FUNC(void, WDGIF_CODE) module_WdgIf::SetMode(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::SetMode(
+   void
+){
 }
 
-FUNC(void, WDGIF_CODE) module_WdgIf::SetTriggerCondition(void){
+FUNC(void, WDGIF_CODE) module_WdgIf::SetTriggerCondition(
+   void
+){
 }
 
 /******************************************************************************/
