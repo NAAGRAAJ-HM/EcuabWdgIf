@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgWdgIf.hpp"
-#include "WdgIf_core.hpp"
-#include "infWdgIf_Exp.hpp"
+#include "WdgIf.hpp"
 #include "infWdgIf_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_WdgIf:
-      INTERFACES_EXPORTED_WDGIF
-      public abstract_module
-   ,  public class_WdgIf_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, WDGIF_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, WDGIF_CODE) DeInitFunction (void);
-      FUNC(void, WDGIF_CODE) MainFunction   (void);
-      WDGIF_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_WdgIf, WDGIF_VAR) WdgIf;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
