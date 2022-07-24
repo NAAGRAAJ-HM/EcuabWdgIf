@@ -48,7 +48,8 @@ VAR(module_WdgIf, WDGIF_VAR) WdgIf;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, WDGIF_CONST,       WDGIF_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == WdgIf_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == WdgIf_DevErrorDetect)

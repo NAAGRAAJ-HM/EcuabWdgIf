@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstWdgIf.hpp"
 #include "CfgWdgIf.hpp"
 #include "WdgIf_core.hpp"
 #include "infWdgIf_Exp.hpp"
@@ -31,13 +32,15 @@ class module_WdgIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstWdgIf_Type* lptrConst = (ConstWdgIf_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, WDGIF_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, WDGIF_CONST,       WDGIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
       );
       FUNC(void, WDGIF_CODE) DeInitFunction (void);
       FUNC(void, WDGIF_CODE) MainFunction   (void);
