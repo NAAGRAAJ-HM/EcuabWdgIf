@@ -61,7 +61,7 @@ FUNC(void, WDGIF_CODE) module_WdgIf::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstWdgIf_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
