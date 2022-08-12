@@ -1,24 +1,20 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabWdgIf_core.hpp                                                    */
+/* File   : EcuabWdgIf.hpp                                                         */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_EcuabWdgIf.hpp"
+#include "ConstEcuabWdgIf.hpp"
+#include "CfgEcuabWdgIf.hpp"
+#include "EcuabWdgIf_core.hpp"
+#include "infEcuabWdgIf_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ECUABWDGIF_CORE_FUNCTIONALITIES                                             \
-              FUNC(void, ECUABWDGIF_CODE) SetMode             (void);               \
-              FUNC(void, ECUABWDGIF_CODE) SetTriggerCondition (void);               \
-
-#define ECUABWDGIF_CORE_FUNCTIONALITIES_VIRTUAL                                     \
-      virtual FUNC(void, ECUABWDGIF_CODE) SetMode             (void) = 0;           \
-      virtual FUNC(void, ECUABWDGIF_CODE) SetTriggerCondition (void) = 0;           \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -27,9 +23,28 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_EcuabWdgIf_Functionality{
+class module_EcuabWdgIf:
+      INTERFACES_EXPORTED_WDGIF
+      public abstract_module
+   ,  public class_EcuabWdgIf_Functionality
+{
+   private:
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+      const ConstEcuabWdgIf_Type* lptrConst = (ConstEcuabWdgIf_Type*)NULL_PTR;
+
    public:
-      ECUABWDGIF_CORE_FUNCTIONALITIES_VIRTUAL
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+      FUNC(void, WDGIF_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, WDGIF_CONST,       WDGIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
+      );
+      FUNC(void, WDGIF_CODE) DeInitFunction (void);
+      FUNC(void, WDGIF_CODE) MainFunction   (void);
+      WDGIF_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -43,10 +58,7 @@ class class_EcuabWdgIf_Functionality{
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
+extern VAR(module_EcuabWdgIf, WDGIF_VAR) EcuabWdgIf;
 
 /******************************************************************************/
 /* EOF                                                                        */

@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_EcuabWdgIf:
-      INTERFACES_EXPORTED_WDGIF
+      INTERFACES_EXPORTED_ECUABWDGIF
       public abstract_module
    ,  public class_EcuabWdgIf_Functionality
 {
@@ -38,13 +38,13 @@ class module_EcuabWdgIf:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, WDGIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, WDGIF_CONST,       WDGIF_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
+      FUNC(void, ECUABWDGIF_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, ECUABWDGIF_CONST,       ECUABWDGIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABWDGIF_CONFIG_DATA, ECUABWDGIF_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, WDGIF_CODE) DeInitFunction (void);
-      FUNC(void, WDGIF_CODE) MainFunction   (void);
-      WDGIF_CORE_FUNCTIONALITIES
+      FUNC(void, ECUABWDGIF_CODE) DeInitFunction (void);
+      FUNC(void, ECUABWDGIF_CODE) MainFunction   (void);
+      ECUABWDGIF_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_EcuabWdgIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_EcuabWdgIf, WDGIF_VAR) EcuabWdgIf;
+extern VAR(module_EcuabWdgIf, ECUABWDGIF_VAR) EcuabWdgIf;
 
 /******************************************************************************/
 /* EOF                                                                        */

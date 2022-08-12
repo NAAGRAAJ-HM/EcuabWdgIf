@@ -1,20 +1,18 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabWdgIf.hpp                                                         */
+/* File   : infEcuabWdgIf_Exp.hpp                                                  */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstEcuabWdgIf.hpp"
-#include "CfgEcuabWdgIf.hpp"
-#include "EcuabWdgIf_core.hpp"
-#include "infEcuabWdgIf_Exp.hpp"
+#include "infEcuabWdgIf_ServiceDet.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define INTERFACES_EXPORTED_WDGIF
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -23,29 +21,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_EcuabWdgIf:
-      INTERFACES_EXMCALPORTED_ECUABWDGIF
-      public abstract_module
-   ,  public class_EcuabWdgIf_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstEcuabWdgIf_Type* lptrConst = (ConstEcuabWdgIf_Type*)NULL_PTR;
-
-   public:
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-      FUNC(void, ECUABWDGIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ECUABWDGIF_CONST,       ECUABWDGIF_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABWDGIF_CONFIG_DATA, ECUABWDGIF_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, ECUABWDGIF_CODE) DeInitFunction (void);
-      FUNC(void, ECUABWDGIF_CODE) MainFunction   (void);
-      ECUABWDGIF_CORE_FUNCTIONALITIES
-};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -58,7 +33,10 @@ class module_EcuabWdgIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_EcuabWdgIf, ECUABWDGIF_VAR) EcuabWdgIf;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 
 /******************************************************************************/
 /* EOF                                                                        */

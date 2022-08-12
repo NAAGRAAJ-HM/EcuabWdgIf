@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ECUABWDGIF_AR_RELEASE_VERSION_MAJOR                                         4
-#define ECUABWDGIF_AR_RELEASE_VERSION_MINOR                                         3
+#define WDGIF_AR_RELEASE_VERSION_MAJOR                                         4
+#define WDGIF_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(ECUABWDGIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible ECUABWDGIF_AR_RELEASE_VERSION_MAJOR!"
+#if(WDGIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible WDGIF_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(ECUABWDGIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible ECUABWDGIF_AR_RELEASE_VERSION_MINOR!"
+#if(WDGIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible WDGIF_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_EcuabWdgIf, ECUABWDGIF_VAR) EcuabWdgIf;
+VAR(module_EcuabWdgIf, WDGIF_VAR) EcuabWdgIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, ECUABWDGIF_CONST,       ECUABWDGIF_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABWDGIF_CONFIG_DATA, ECUABWDGIF_APPL_CONST) lptrCfgModule
+FUNC(void, WDGIF_CODE) module_EcuabWdgIf::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, WDGIF_CONST,       WDGIF_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   WDGIF_CONFIG_DATA, WDGIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == EcuabWdgIf_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ECUABWDGIF_E_UNINIT
+         ,  WDGIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::DeInitFunction(
+FUNC(void, WDGIF_CODE) module_EcuabWdgIf::DeInitFunction(
    void
 ){
 #if(STD_ON == EcuabWdgIf_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ECUABWDGIF_E_UNINIT
+         ,  WDGIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::MainFunction(
+FUNC(void, WDGIF_CODE) module_EcuabWdgIf::MainFunction(
    void
 ){
 #if(STD_ON == EcuabWdgIf_InitCheck)
@@ -132,19 +132,19 @@ FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ECUABWDGIF_E_UNINIT
+         ,  WDGIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::SetMode(
+FUNC(void, WDGIF_CODE) module_EcuabWdgIf::SetMode(
    void
 ){
 }
 
-FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::SetTriggerCondition(
+FUNC(void, WDGIF_CODE) module_EcuabWdgIf::SetTriggerCondition(
    void
 ){
 }

@@ -12,13 +12,13 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define WDGIF_CORE_FUNCTIONALITIES                                             \
-              FUNC(void, WDGIF_CODE) SetMode             (void);               \
-              FUNC(void, WDGIF_CODE) SetTriggerCondition (void);               \
+#define ECUABWDGIF_CORE_FUNCTIONALITIES                                             \
+              FUNC(void, ECUABWDGIF_CODE) SetMode             (void);               \
+              FUNC(void, ECUABWDGIF_CODE) SetTriggerCondition (void);               \
 
-#define WDGIF_CORE_FUNCTIONALITIES_VIRTUAL                                     \
-      virtual FUNC(void, WDGIF_CODE) SetMode             (void) = 0;           \
-      virtual FUNC(void, WDGIF_CODE) SetTriggerCondition (void) = 0;           \
+#define ECUABWDGIF_CORE_FUNCTIONALITIES_VIRTUAL                                     \
+      virtual FUNC(void, ECUABWDGIF_CODE) SetMode             (void) = 0;           \
+      virtual FUNC(void, ECUABWDGIF_CODE) SetTriggerCondition (void) = 0;           \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -29,7 +29,7 @@
 /******************************************************************************/
 class class_EcuabWdgIf_Functionality{
    public:
-      WDGIF_CORE_FUNCTIONALITIES_VIRTUAL
+      ECUABWDGIF_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
