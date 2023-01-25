@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabWdgIf.hpp                                                         */
+/* File   : EcuabWdgIf.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstEcuabWdgIf.hpp"
+#include "infEcuabWdgIf_ServiceNvM_Types.hpp"
 #include "CfgEcuabWdgIf.hpp"
 #include "EcuabWdgIf_core.hpp"
 #include "infEcuabWdgIf_Exp.hpp"
