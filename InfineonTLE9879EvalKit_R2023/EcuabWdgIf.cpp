@@ -13,19 +13,10 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ECUABWDGIF_AR_RELEASE_VERSION_MAJOR                                    4
-#define ECUABWDGIF_AR_RELEASE_VERSION_MINOR                                    3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(ECUABWDGIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible ECUABWDGIF_AR_RELEASE_VERSION_MAJOR!"
-#endif
-
-#if(ECUABWDGIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible ECUABWDGIF_AR_RELEASE_VERSION_MINOR!"
-#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -48,7 +39,7 @@ VAR(module_EcuabWdgIf, ECUABWDGIF_VAR) EcuabWdgIf;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, ECUABWDGIF_CONST,       ECUABWDGIF_APPL_CONST) lptrConstModule
+      CONSTP2CONST(ConstModule_TypeAbstract, ECUABWDGIF_CONST,       ECUABWDGIF_APPL_CONST) lptrNvMBlocksRomModule
    ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABWDGIF_CONFIG_DATA, ECUABWDGIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == EcuabWdgIf_InitCheck)
@@ -58,10 +49,10 @@ FUNC(void, ECUABWDGIF_CODE) module_EcuabWdgIf::InitFunction(
    ){
 #endif
       if(
-            (NULL_PTR != lptrConstModule)
+            (NULL_PTR != lptrNvMBlocksRomModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = (const ConstEcuabWdgIf_Type*)lptrConstModule;
+         lptrNvMBlocksRom = lptrNvMBlocksRomModule;
          lptrCfg   = lptrCfgModule;
       }
       else{

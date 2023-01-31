@@ -32,14 +32,14 @@ class module_EcuabWdgIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstEcuabWdgIf_Type* lptrConst = (ConstEcuabWdgIf_Type*)NULL_PTR;
+      const ConstModule_TypeAbstract* lptrNvMBlocksRom = (ConstModule_TypeAbstract*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, ECUABWDGIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ECUABWDGIF_CONST,       ECUABWDGIF_APPL_CONST) lptrConstModule
+            CONSTP2CONST(ConstModule_TypeAbstract, ECUABWDGIF_CONST,       ECUABWDGIF_APPL_CONST) lptrNvMBlocksRomModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABWDGIF_CONFIG_DATA, ECUABWDGIF_APPL_CONST) lptrCfgModule
       );
       FUNC(void, ECUABWDGIF_CODE) DeInitFunction (void);
